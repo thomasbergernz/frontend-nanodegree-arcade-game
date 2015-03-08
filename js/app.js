@@ -48,7 +48,7 @@ Player.prototype.update = function(dt) {
     //when player reaches water, player wins, player reset
 	if (this.y < 40) {
     this.reset();
-	console.log(score += 10);
+	console.log("Score: " + (score += 10));
 }
 };
 
@@ -73,6 +73,14 @@ Player.prototype.reset = function() {
     this.y = 404;
 };
 
+function checkCollisions() {
+  allEnemies.forEach(function(enemy) {                     
+    if ( ((player.x - 50) < enemy.x) && (enemy.x < (player.x + 50 )) && ((player.y - 50) < enemy.y) && (enemy.y < (player.y + 50 ))){
+        player.reset();
+        }
+    });
+};
+
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
@@ -86,11 +94,12 @@ for (var i = 0; i < totalEnemies; i++) {
 	bug.speed = randomSpeed();
     allEnemies.push(bug);
 }
-// Pick random speed for enemy
+// Pick random speed
 function randomSpeed() {
-	var speed = [200,300,400]; // pixels / second
+	var speed = [200,300,400,200,300,400]; // pixels / second
 	return speed[Math.floor(Math.random() * speed.length)];
 }
+// Pick random y position for bugs
 function randomY() {
 	var position = [60,143,226]; 
 	return position[Math.floor(Math.random() * position.length)];
