@@ -1,6 +1,9 @@
-frontend-nanodegree-arcade-game
+A Frogger-like arcade-game
 ===============================
 
-Students should use this rubric: https://www.udacity.com/course/viewer#!/c-ud015/l-3072058665/m-3072588797
+This game requires a computer with keyboard and a web browser supporting Javascript. 
+You can [play online](http://thomasbergernz.github.io/frontend-nanodegree-arcade-game) or [download](https://github.com/thomasbergernz/frontend-nanodegree-arcade-game/archive/master.zip) to your computer and expand the ZIP archive.
+Open the included 'index.html' file in a web browser.
 
-for self-checking their submission.
+Use the arrow keys of your keyboard to navigate the character and try to reach the water on the top. 
+Avoid collisions with the bugs at all cost. Have fun!
