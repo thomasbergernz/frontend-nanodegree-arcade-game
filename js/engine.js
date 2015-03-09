@@ -13,6 +13,16 @@
  * the canvas' context (ctx) object globally available to make writing app.js
  * a little simpler to work with.
  */
+ 
+/* define the runAnimation boolean as an obect
+ * so that it can be modified by reference
+ * from http://www.html5canvastutorials.com/advanced/html5-canvas-start-and-stop-an-animation/
+ */
+var runAnimation = {
+	value: false
+};
+
+runAnimation.value = !runAnimation.value;
 
 var Engine = (function(global) {
     /* Predefine the variables we'll be using within this scope,
@@ -56,7 +66,9 @@ var Engine = (function(global) {
         /* Use the browser's requestAnimationFrame function to call this
          * function again as soon as the browser is able to draw another frame.
          */
-        win.requestAnimationFrame(main);
+        if(runAnimation.value) {
+			win.requestAnimationFrame(main);
+      	}
     };
 
     /* This function does some initial setup that should only occur once,
